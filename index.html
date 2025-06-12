@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feliz dia dos Namorados ❤️</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #111;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff2e63;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .contador {
+      font-size: 1.1em;
+      margin-top: 10px;
+      background: #1a1a1a;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid #ff2e63;
+      color: #fff;
+    }
+
+    .frase-carousel {
+      margin: 30px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      background-color: #1a1a1a;
+      border-left: 5px solid #ff2e63;
+      border-radius: 10px;
+      font-size: 1.2em;
+      animation: fadeIn 1.5s ease;
+      min-height: 90px;
+    }
+
+    .galeria {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px;
+      gap: 15px;
+    }
+
+    .galeria img {
+      height: 200px;
+      border-radius: 12px;
+      border: 3px solid #ff2e63;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin: 30px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Corações flutuando */
+    .heart {
+      position: fixed;
+      color: #ff2e63;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff2e63;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    /* Scrollbar para galeria */
+    .galeria::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .galeria::-webkit-scrollbar-thumb {
+      background-color: #ff2e63;
+      border-radius: 4px;
+    }
+
+    .galeria::-webkit-scrollbar-track {
+      background-color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Feliz Dia dos Namorados ❤️</h1>
+    <div class="contador" id="contador">1 Coríntios 13:4-7
+
+"O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha.
+ Não maltrata, não procura os seus interesses, não se ira facilmente, não guarda rancor. 
+ O amor não se alegra com a injustiça, mas se alegra com a verdade. 
+ Tudo sofre, tudo crê, tudo espera, tudo suporta."</div>
+  </header>
+
+  <section>
+    <div class="frase-carousel" id="frase-carousel">
+      "Você é meu amor, minha vida e meu lar."
+    </div>
+  </section>
+
+  <section class="galeria">
+    <img src="imgs/foto1.png" alt="Foto 1">
+    <img src="/imgs/foto2.png" alt="Foto 2">
+    <img src="imgs/foto3.png" alt="Foto 3">
+    <!-- Adicione mais fotos -->
+  </section>
+
+  <section>
+    <h1> Com amor, </h1>
+    <h2> Meu amor, não tenho palavras para te dizer o quanto eu sou grata por ter você em minha vida,
+        você é a razão do meu sorriso, a luz dos meus dias e o amor da minha vida. Desde que nos conhecemos, tudo mudou para melhor. 
+        Você é meu porto seguro, meu melhor amigo e meu grande amor. 
+        Obrigada por cada momento, cada risada e cada carinho. 
+        Te amo mais do que palavras podem expressar! 💖
+    </h2>
+  </section>
+
+  <footer>
+    Feito com ❤️ por Debora — Dia dos Namorados 2025
+  </footer>
+
+  <!-- Corações -->
+  <script>
+    function criarCoracao() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(criarCoracao, 500);
+  </script>
+
+  <!-- Contador -->
+  <script>
+    function atualizarContador() {
+      const inicio = new Date("2023-07-29T00:00:00");
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("contador").innerText =
+        `Estamos juntos há ${dias} dias, ${horas}h ${minutos}min ${segundos}s 💘`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+
+  <!-- Frases rotativas -->
+  <script>
+    const frases = [
+      "Você é meu amor, minha vida e meu lar.",
+      "Te amo cada dia mais, em cada detalhe.",
+      "Com você, tudo faz sentido. ❤️",
+      "Meu coração é completamente seu.",
+      "Desde 29/07/2023, minha vida mudou para melhor.",
+      "Você é minha razão de sorrir todos os dias!"
+    ];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % frases.length;
+      document.getElementById("frase-carousel").innerText = frases[index];
+    }, 4000);
+  </script>
+
+  <!-- Música -->
+  <audio id="musica" loop autoplay>
+    <source src="musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+  <button class="music-btn" onclick="toggleMusica()">🎵</button>
+  <script>
+    const audio = document.getElementById("musica");
+    let tocando = true;
+
+    function toggleMusica() {
+      if (tocando) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      tocando = !tocando;
+    }
+  </script>
+
+</body>
+</html>
